@@ -4,4 +4,9 @@
 export class <%= singular(classify(name)) %> {
   @Field(() => Int, { description: 'Example field (placeholder)' })
   exampleField: number;
-}<% } else { %>export class <%= singular(classify(name)) %> {}<% } %>
+}<% } else { %>
+  import { Entity } from 'typeorm';
+  
+  @Entity()
+  export class <%= singular(classify(name)) %> {}<% }
+  %>
